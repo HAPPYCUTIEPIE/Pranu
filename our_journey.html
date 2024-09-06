@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fff0f6; /* Soft pink */
+            background-color: #fff0f6;
             color: #333;
             margin: 0;
             padding: 20px;
@@ -17,23 +17,23 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #ffffff; /* White background */
+            background-color: #ffffff;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            border: 3px solid #ffccf9; /* Subtle pink border */
+            border: 3px solid #ffccf9;
         }
 
         h1 {
             text-align: center;
-            color: #ff66b3; /* Soft pink */
+            color: #ff66b3; 
             font-size: 3em;
             margin-bottom: 0.5em;
         }
 
         h2 {
             margin-top: 40px;
-            color: #ff80bf; /* Brighter pink for headings */
+            color: #ff80bf; 
             font-size: 2.2em;
             text-align: center;
         }
@@ -48,7 +48,7 @@
             font-style: italic;
             margin: 20px 0;
             padding: 20px;
-            background-color: #fff4f9; /* Light background for poem section */
+            background-color: #fff4f9; 
             border-left: 5px solid #ff66b3;
             font-size: 1.3em;
             line-height: 1.8;
@@ -68,7 +68,6 @@
             font-weight: bold;
         }
 
-        /* Heartbeat animation */
         .milestone {
             animation: heartbeat 2s infinite;
         }
@@ -81,7 +80,6 @@
             100% { transform: scale(1); }
         }
 
-        /* Cool button */
         .cool-button {
             background: linear-gradient(135deg, #ff99cc, #ffcc99);
             color: white;
@@ -123,7 +121,6 @@
             transform: scale(1.05);
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.4em;
@@ -218,7 +215,13 @@
         <h2>Five months..</h2>
         <p>Soon..</p>
 
-        <button class="cool-button">Are You Ready for a Surprise?</button>
+        <button class="cool-button" id="surpriseButton">Are You Ready for a Surprise?</button>
     </div>
+    <script>
+    document.getElementById("surpriseButton").addEventListener("click", function() {
+        window.location.href = "gallery.html";
+    });
+    </script>
+
 </body>
 </html>
