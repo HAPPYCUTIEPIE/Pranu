@@ -74,7 +74,7 @@
         <button onclick="goToNext()">Heck Yeah! 🙌</button>
     </div>
     
-    <script>
+    <div>
         const noButton = document.querySelector('.btn-no');
 
         noButton.addEventListener('mouseover', () => {
@@ -83,7 +83,8 @@
             const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
             noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
         });
-    </script>
+    </div>
+    
 
     <script>
         function goToNext() {
