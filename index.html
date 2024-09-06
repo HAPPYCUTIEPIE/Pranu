@@ -72,19 +72,8 @@
         <h1>Welcome, Special One!</h1>
         <p>Hey, you! The one who made Prajwal's heart do crazy things. Ready for a surprise?</p>
         <button onclick="goToNext()">Heck Yeah! 🙌</button>
-    </div>
-    
-    <div>
-        const noButton = document.querySelector('.btn-no');
-
-        noButton.addEventListener('mouseover', () => {
-            // Randomize the position of the button
-            const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
-            const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
-            noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
-        });
-    </div>
-    
+        <button oneclick="runawayButton()">Nope</button>
+    </div> 
 
     <script>
         function goToNext() {
