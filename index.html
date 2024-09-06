@@ -16,6 +16,8 @@
             align-items: center;
             height: 100vh;
             color: #333;
+            flex-direction: column;
+            text-align: center;
         }
 
         h1 {
@@ -27,6 +29,11 @@
             font-size: 1.2rem;
             margin: 20px 0;
             color: #555;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 20px;
         }
 
         button {
@@ -43,6 +50,21 @@
         button:hover {
             background-color: #ff3e3e;
             transform: scale(1.1);
+        }
+
+        .btn-no {
+            background-color: #f0a1a1;
+        }
+
+        .btn-no:hover {
+            background-color: #ff7a7a;
+        }
+
+        .btn-no-move:hover {
+            position: absolute;
+            left: calc(50% + 100px);
+            top: calc(50% - 30px);
+            transform: translate(-50%, -50%) rotate(360deg);
         }
 
         img {
@@ -64,6 +86,17 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        @media(max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            button {
+                font-size: 1.2rem;
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -71,9 +104,11 @@
     <div class="content">
         <h1>Welcome, Special One!</h1>
         <p>Hey, you! The one who made Prajwal's heart do crazy things. Ready for a surprise?</p>
-        <button onclick="goToNext()">Heck Yeah! 🙌</button>
-        <button oneclick="runawayButton()">Nope</button>
-    </div> 
+        <div class="btn-container">
+            <button onclick="goToNext()">Heck Yeah! 🙌</button>
+            <button class="btn-no btn-no-move">Nope! 😅</button>
+        </div>
+    </div>
 
     <script>
         function goToNext() {
@@ -81,6 +116,15 @@
             document.body.innerHTML = '<h1 class="fade">Are you ready for your surprise? 🎉</h1>';
             window.location.href = 'our_journey.html';
         }
+
+        // Make the "No" button move when hovered
+        const noButton = document.querySelector('.btn-no-move');
+
+        noButton.addEventListener('mouseover', () => {
+            const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        });
     </script>
 
 </body>
