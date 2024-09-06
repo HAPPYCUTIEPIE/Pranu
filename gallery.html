@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Special Surprise!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f7c6c7, #ffe4b2);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .media-container {
+            margin: 20px 0;
+        }
+
+        img, video {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-section {
+            margin: 30px 0;
+        }
+
+        .download-section a {
+            text-decoration: none;
+            background-color: #ff6363;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .download-section a:hover {
+            background-color: #ff3e3e;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎁 Your Special Surprise 🎁</h1>
+
+    <div class="media-container">
+        <h2>Photos</h2>
+        <img src="path_to_image.jpg" alt="Special Memory 1">
+        <img src="path_to_another_image.jpg" alt="Special Memory 2">
+    </div>
+
+    <div class="media-container">
+        <h2>Video</h2>
+        <video controls>
+            <source src="path_to_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="download-section">
+        <h2>Files to Download</h2>
+        <a href="path_to_file1.pdf" download>Download File 1</a>
+        <a href="path_to_file2.zip" download>Download File 2</a>
+    </div>
+
+</body>
+</html>
