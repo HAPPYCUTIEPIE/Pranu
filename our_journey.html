@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beautiful Journey Which Never Ends</title>
+    <title>Beautiful Journey That Never Ends</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #ffedf7; /* Light pink for a soft, cute look */
+            background-color: #fff0f6; /* Soft pink */
             color: #333;
             margin: 0;
             padding: 20px;
@@ -17,7 +17,7 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: #ffffff; /* White background */
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -26,15 +26,15 @@
 
         h1 {
             text-align: center;
-            color: #e75480; /* Soft pink */
-            font-size: 2.8em;
+            color: #ff66b3; /* Soft pink */
+            font-size: 3em;
             margin-bottom: 0.5em;
         }
 
         h2 {
             margin-top: 40px;
-            color: #ff66b3; /* Brighter pink for headings */
-            font-size: 2em;
+            color: #ff80bf; /* Brighter pink for headings */
+            font-size: 2.2em;
             text-align: center;
         }
 
@@ -48,8 +48,8 @@
             font-style: italic;
             margin: 20px 0;
             padding: 20px;
-            background-color: #fff0f6; /* Light background for poem section */
-            border-left: 5px solid #e75480;
+            background-color: #fff4f9; /* Light background for poem section */
+            border-left: 5px solid #ff66b3;
             font-size: 1.3em;
             line-height: 1.8;
             border-radius: 8px;
@@ -81,6 +81,48 @@
             100% { transform: scale(1); }
         }
 
+        /* Cool button */
+        .cool-button {
+            background: linear-gradient(135deg, #ff99cc, #ffcc99);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: block;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .cool-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            border-radius: 50%;
+        }
+
+        .cool-button:hover::before {
+            width: 0%;
+            height: 0%;
+        }
+
+        .cool-button:hover {
+            background: linear-gradient(135deg, #ff77a9, #ffb366);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transform: scale(1.05);
+        }
+
         /* Responsive design */
         @media (max-width: 768px) {
             h1 {
@@ -93,6 +135,11 @@
 
             p, .poem {
                 font-size: 1.1em;
+            }
+
+            .cool-button {
+                font-size: 1.3rem;
+                padding: 12px 24px;
             }
         }
     </style>
@@ -170,6 +217,8 @@
         <p>I love you, Pranati💗... Always and forever.</p>
         <h2>Five months..</h2>
         <p>Soon..</p>
+
+        <button class="cool-button">Are You Ready for a Surprise?</button>
     </div>
 </body>
 </html>
