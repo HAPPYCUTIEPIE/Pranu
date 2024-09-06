@@ -74,14 +74,11 @@
         <button onclick="goToNext()">Heck Yeah! 🙌</button>
     </div>
 
-    <!-- Include Pranati's transparent picture -->
-    <img src="pranati.png" alt="Pranati's Picture" />
-
     <script>
         function goToNext() {
             document.querySelector('.content').classList.add('hidden');
             document.body.innerHTML = '<h1 class="fade">Are you ready for your surprise? 🎉</h1>';
-            setTimeout(() => window.location.href = "our_journey.html", 1500);  // Redirect to the next page
+            window.location.href = 'our_journey.html';
         }
     </script>
 
