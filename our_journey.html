@@ -60,6 +60,12 @@
             font-weight: bold;
         }
 
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
         .cool-button {
             background: linear-gradient(135deg, #ff99cc, #ffcc99);
             color: white;
@@ -73,8 +79,8 @@
             position: relative;
             overflow: hidden;
             display: block;
-            margin: 30px auto;
             text-align: center;
+            width: 45%;
         }
 
         .cool-button::before {
@@ -117,6 +123,16 @@
             .cool-button {
                 font-size: 1.3rem;
                 padding: 12px 24px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cool-button {
+                width: 80%;
+                margin-bottom: 15px;
             }
         }
     </style>
@@ -195,13 +211,20 @@
         <h2>Five Months of Us</h2>
         <p>Soon..</p>
 
-        <button class="cool-button" id="surpriseButton">Our Endless Smiles</button>
+        <div class="button-container">
+            <button class="cool-button" id="surpriseButton">Our Endless Smiles</button>
+            <button class="cool-button" id="gamesButton">Play Games</button>
+        </div>
     </div>
-    <script>
-    document.getElementById("surpriseButton").addEventListener("click", function() {
-        window.location.href = "gallery.html";
-    });
-    </script>
 
+    <script>
+        document.getElementById("surpriseButton").addEventListener("click", function() {
+            window.location.href = "gallery.html";
+        });
+
+        document.getElementById("gamesButton").addEventListener("click", function() {
+            window.location.href = "games.html";
+        });
+    </script>
 </body>
 </html>
