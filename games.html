@@ -3,44 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games</title>
+    <title>Our Love & Learning Journey</title>
     <style>
-        
         body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f7c6c7, #ffe4b2);
             font-family: 'Poppins', sans-serif;
+            background-color: #fff0f6;
             color: #333;
-            text-align: center;
+            margin: 0;
             padding: 20px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 3px solid #ffccf9;
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            color: #ff66b3;
+            font-size: 2.5em;
         }
 
-        .media-container {
+        .question {
+            font-size: 1.5em;
             margin: 20px 0;
         }
-        p {
-            font-size: 1.2em;
+
+        .options button {
+            background-color: #ff66b3;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1rem;
+            margin: 10px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .options button:hover {
+            background-color: #ff80bf;
+        }
+
+        .result {
+            margin: 20px 0;
+            font-size: 1.4em;
+            font-weight: bold;
             color: #333;
         }
-        .countdown {
-            font-size: 2em;
-            margin: 1em 0;
+
+        .heart-points {
+            color: #ff66b3;
+        }
+
+        .next-button {
+            background-color: #ff99cc;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Coming Soon!</h1>
-        <p>Working hard to bring this as fast as possible</p>
-        <p></p>
-        <div class="countdown">
+        <h1>Our Love & Learning Journey</h1>
+
+        <div id="game-container">
+            <div class="question" id="question">Loading...</div>
+
+            <div class="options" id="options">
+                <button id="option1" onclick="checkAnswer(1)">Option 1</button>
+                <button id="option2" onclick="checkAnswer(2)">Option 2</button>
+                <button id="option3" onclick="checkAnswer(3)">Option 3</button>
+                <button id="option4" onclick="checkAnswer(4)">Option 4</button>
+            </div>
+
+            <div class="result" id="result"></div>
+            <button class="next-button" id="nextButton" onclick="nextQuestion()" style="display:none;">Next Question</button>
         </div>
+
+        <div id="heart-points">❤️ Heart Points: <span id="points">0</span></div>
     </div>
+
+    <script>
+        const questions = [
+            {
+                question: "When did we celebrate our first special moment?",
+                options: ["1/1/2024", "29/12/2023", "23/5/2024", "14/2/2024"],
+                correct: 2,
+                type: "love"
+            },
+            {
+                question: "What is the chemical symbol for water?",
+                options: ["HO", "O2", "H2O", "CO2"],
+                correct: 3,
+                type: "science"
+            },
+            {
+                question: "What nickname do I call you the most?",
+                options: ["Sweetheart", "Love", "Princess", "Baby"],
+                correct: 3,
+                type: "love"
+            },
+            {
+                question: "Solve this: 5x - 3 = 17",
+                options: ["x = 5", "x = 4", "x = 3", "x = 2"],
+                correct: 1,
+                type: "math"
+            },
+            {
+                question: "Which day of the week do we usually talk?",
+                options: ["Monday", "Saturday", "Friday", "Sunday"],
+                correct: 4,
+                type: "love"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let points = 0;
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('question').textContent = q.question;
+            document.getElementById('option1').textContent = q.options[0];
+            document.getElementById('option2').textContent = q.options[1];
+            document.getElementById('option3').textContent = q.options[2];
+            document.getElementById('option4').textContent = q.options[3];
+            document.getElementById('result').textContent = '';
+            document.getElementById('nextButton').style.display = 'none';
+        }
+
+        function checkAnswer(option) {
+            const q = questions[currentQuestion];
+            if (option === q.correct) {
+                document.getElementById('result').textContent = "Correct! ❤️";
+                points += 10;
+                document.getElementById('points').textContent = points;
+            } else {
+                document.getElementById('result').textContent = "Oops, wrong answer.";
+            }
+            document.getElementById('nextButton').style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                document.getElementById('game-container').innerHTML = "<h2>You've completed the game! 🎉</h2><p>You scored " + points + " heart points! 💕</p>";
+            }
+        }
+
+        loadQuestion();
+    </script>
+
 </body>
 </html>
